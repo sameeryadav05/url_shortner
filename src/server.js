@@ -1,8 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv';
-// import connectDB from './config/Db.js';
+import connectDB from './config/Db.js';
 import path, { resolve } from 'path';
 import { fileURLToPath } from "url";
+import UserRouter from './service/user/Router.js';
 dotenv.config()
 
 const app = express();
@@ -19,13 +20,10 @@ app.use(express.static(path.join(__dirname,"public")))
 const url = process.env.MONGODB_URL;
 
 
-// connectDB(url)
-// new Promise((resolve,reject)=>resolve())
-// .then(()=>app.listen(5000,()=>console.log("Server running on port 5000"))).catch((err)=>console.log("Server stop !"))
+connectDB(url)
+.then(()=>app.listen(5000,()=>console.log("Server running on port 5000"))).catch((err)=>console.log("Server stop !"))
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+app.use(UserRouter)
 
 
 app.get('/',(req,res)=>{
