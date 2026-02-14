@@ -5,14 +5,14 @@ import user from './Schema.js';
 const UserRouter = express.Router();
 
 UserRouter.post('/form_data',async (req,res)=>{
-    const {email,enrollmentNumber,mobile,name} = req.body
+    const {passenger_name,From,To,journey_date,coach_type} = req.body
 
-    const newUser = new user({
-        email,enrollmentNumber,mobile,name
+    const passenger = new user({
+        passenger_name,From,To,journey_date,coach_type
     }) 
-    await newUser.save();
+    await passenger.save();
 
-    res.send("user created !")
+    res.json({passenger})
 })
 
 export default UserRouter;

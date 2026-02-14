@@ -18,27 +18,38 @@
 </head>
 <body>
 
-    <h2>Student Enrollment Form </h2> 
+    <h2>Ticket</h2> 
 
     <div class = "container">
         <div class = "row">
             <div class = "col-md-6">
                 <form id="myform" action = "/form_data" method = "post">
                     <div class = "mb-3">
-                        <label for = "name" class = "form-label">Name</label>
-                        <input type = "text" name = "name" class = "form-control" id = "name">
+                        <label for = "name" class = "form-label">Passenger Name</label>
+                        <input type = "text" name = "passenger_name" class = "form-control" id = "name" placeholder="Passenger Name ..">
                     </div>
                     <div class = "mb-3">
-                        <label for = "enrollmentNumber" class = "form-label">Enrollment Number</label>
-                        <input type = "number" name = "enrollmentNumber" class = "form-control" id = "enrollmentNumber">
+                        <label for = "From" class = "form-label">From</label>
+                        <input type = "text" name = "From" class = "form-control" id = "from">
                     </div>
                     <div class = "mb-3">
-                        <label for = "email" class = "form-label">Email id</label>
-                        <input type = "text" name = "email" class = "form-control" id = "email">
+                        <label for = "To" class = "form-label">TO</label>
+                        <input type = "text" name = "To" class = "form-control" id = "from">
                     </div>
                     <div class = "mb-3">
-                        <label for = "mobile" class = "form-label">Mobile Number</label>
-                        <input type = "text" name = "mobile" class = "form-control" id = "mobile">
+                        <label for = "journey date" class = "form-label">journey date</label>
+                        <input type = "date" name = "journey_date" class = "form-control" id = "email">
+                    </div>
+                    <div class = "mb-3">
+                        <label for = "coach type" class = "form-label">coach type</label>
+                        <select name="coach_type">
+                            <option value="sleeper">sleeper</option>
+                            <option value="AC-1">AC-1</option>
+                            <option value="AC-2">AC-2</option>
+                            <option value="AC-3">AC-3</option>
+                            <option value="sleeper">sleeper</option>
+                            <option value="chair car">chair car</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -58,34 +69,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-<!-- <script>
-// just for the demos, avoids form submit
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
-$( "#myform" ).validate({
-  rules: {
-    name: {
-      required: true
-    },
-    enrollmentNumber: {
-      required: true,
-      digits: true
-    },
-    email: {
-      required: true,
-      email: true
-    },
-    mobile: {
-      required: true,
-      digits: true,
-      minlength: 10,
-      maxlength: 10
-    }
-  }
-});
-</script> -->
+
 
 </body>
 </html>

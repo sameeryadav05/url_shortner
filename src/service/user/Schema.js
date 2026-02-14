@@ -1,23 +1,25 @@
 import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema({
-    name:{
+    passenger_name:{
         type:String,
         required:true
     },
-    enrollmentNumber:{
+    From:{
         type:String,
         required:true
     },
-    email:{
+    To:{
         type:String,
         required:true,
-        unique:true
     },
-    mobile:{
-        type:Number,
+    journey_date:{
+        type:String,
         required:true,
-        unique:true
+    },
+    coach_type:{
+        type:String,
+        required:true,
     }
 })
 
